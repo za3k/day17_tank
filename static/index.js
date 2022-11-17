@@ -74,6 +74,7 @@ class Bubble extends GameObject {
 }
 class Fish extends GameObject {
     damping = 0.5
+    maxAngle = Math.tan(30/180*Math.PI)
     constructor(p) {
         super();
         this.size = p;
@@ -111,8 +112,7 @@ class Fish extends GameObject {
         this.flip = this.xVel < 0;
 
         // Tilt up and down to show movement
-        if (this.flip) this.angle = Math.atan((targetY - this.top) / Math.abs(this.left - targetX))
-        else this.angle = Math.atan((targetY - this.top) / Math.abs(this.left - targetX))
+        this.angle = Math.atan(clamp(-this.maxAngle, +this.maxAngle, this.yVel / Math.abs(this.xVel))) // Clamped to 30 degree angle up.
 
         // Wiggle around a little instead of clustering on the mouse
         this.maxYOffset = g.r.height/10;
@@ -121,7 +121,7 @@ class Fish extends GameObject {
         this.desiredYOffset += randFloat((this.desiredYOffset < -this.maxYOffset ? 0:-10), (this.desiredYOffset > this.maxYOffset ? 0:10));
 
         // Bounce of the edges
-        if (this.top < 0) this.yVel = Math.abs(this.yVel);
+        if (this.top < this.e[0].height/3) this.yVel = Math.abs(this.yVel); // Top of the fish, not center of the fish. It's allowed to peek a LITTLE out for fun.
         if (this.top > g.r.height) this.yVel = -Math.abs(this.yVel);
         this.top = clamp(0, g.r.height, this.top);
         if (this.left < 0) this.xVel = Math.abs(this.xVel);

@@ -2,7 +2,7 @@ Hack-A-Day is a project I'm doing in November, where I try to make 30 new projec
 
 # Day 17: Hack-A-Sound
 
-This is a fishtank.
+This is a relaxing fishtank.
 
 ![Screenshot](screenshot.png)
 
@@ -13,3 +13,4 @@ Source available on [github](https://github.com/za3k/day17_tank).
 ## Credits
 - Fish sprite from [Beksee](https://www.cleanpng.com/png-computer-icons-clip-art-clown-fish-3684590/).
 - Ocean CSS from [Cody Pearce](https://freefrontend.com/css-water-effects/)
+- Sound from [Videvo](https://www.videvo.net/sound-effect/underwater-waves-03/449142/)

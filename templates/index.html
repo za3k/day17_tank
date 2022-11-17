@@ -2,6 +2,12 @@
 
 {% extends 'base.html' %}
 {% block title %}Tank{% endblock %}
+{% block extras %}
+    <audio controls autoplay loop>
+    <source src="{{ url_for('static', filename="sound/underwater.mp3") }}">
+    No audio moron!
+    </audio>
+{% endblock %}
 {% block header %}
     <script src="{{ url_for('static', filename='index.js') }}"></script>
 {% endblock %}
