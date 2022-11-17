@@ -1,0 +1,11 @@
+[Unit]
+Description=gunicorn3 for hackaday-17-tank
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/hackaday/day17_tank
+ExecStart=/bin/gunicorn3 -e SCRIPT_NAME=/hackaday/tank --bind 0.0.0.0:8017 app:app
+
+[Install]
+WantedBy=multi-user.target

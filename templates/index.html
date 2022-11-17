@@ -1,0 +1,10 @@
+{% from 'common.html' import getId,resetId %}
+
+{% extends 'base.html' %}
+{% block title %}Tank{% endblock %}
+{% block header %}
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}
+{% block content %}
+    <div class="tank"></div>
+{% endblock %}
